@@ -51,6 +51,8 @@ git status --short --branch
 
 루트 `package.json`, `pnpm-workspace.yaml`, 공통 `tsconfig.base.json`, `.gitignore`를 만든다.
 
+pnpm의 의존성 빌드 보안 정책에는 Vite 번들러가 필요로 하는 `esbuild`만 허용한다. 다른 패키지의 설치 스크립트는 자동 실행하지 않는다.
+
 ### 단계 3 — 공용 게임 코어 구성
 
 보드·블록·플레이어·채팅 타입과 이동, 회전, 충돌, 드롭, 줄 제거를 순수 함수로 구현하고 단위 테스트를 둔다.
