@@ -17,7 +17,7 @@ import {
   type ServerToClientEvents,
 } from "@r-tetris/core";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import { io } from "socket.io-client";
+import { io, type Socket } from "socket.io-client";
 
 const SOCKET_URL = import.meta.env.VITE_SOCKET_URL ?? "http://localhost:3001";
 const COLORS = ["transparent", "#38d9ff", "#4f6cff", "#ff9f43", "#ffd93d", "#4ce0a0", "#b36bff", "#ff5576"];
@@ -68,7 +68,10 @@ export function App() {
   const [roomCode, setRoomCode] = useState("LOBBY");
   const [chatText, setChatText] = useState("");
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const socket = useMemo(() => io<ServerToClientEvents, ClientToServerEvents>(SOCKET_URL, { autoConnect: false }), []);
+  const socket = useMemo<Socket<ServerToClientEvents, ClientToServerEvents>>(
+    () => io(SOCKET_URL, { autoConnect: false }),
+    [],
+  );
 
   useEffect(() => {
     const onConnect = () => setNotice("서버 연결됨");
@@ -203,4 +206,3 @@ export function App() {
     </main>
   );
 }
-

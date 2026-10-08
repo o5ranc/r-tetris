@@ -2,9 +2,7 @@ packages:
   - apps/*
   - packages/*
 
-confirmModulesPurge: false
-
-onlyBuiltDependencies:
-  - esbuild
 allowBuilds:
-  esbuild: set this to true or false
+  esbuild: true
+
+confirmModulesPurge: false

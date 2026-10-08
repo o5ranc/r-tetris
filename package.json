@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "pnpm -r --if-present build",
-    "dev": "pnpm --parallel --filter @r-tetris/server --filter @r-tetris/react-app --filter @r-tetris/vue-app dev",
+    "dev": "pnpm --filter @r-tetris/core build && pnpm --parallel --filter @r-tetris/server --filter @r-tetris/react-app --filter @r-tetris/vue-app dev",
     "test": "pnpm -r --if-present test",
     "typecheck": "pnpm -r --if-present typecheck"
   },
