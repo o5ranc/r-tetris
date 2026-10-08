@@ -1,0 +1,22 @@
+{
+  "name": "@r-tetris/vue-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite --port 5174",
+    "typecheck": "vue-tsc --noEmit --pretty false"
+  },
+  "dependencies": {
+    "@r-tetris/core": "workspace:*",
+    "socket.io-client": "^4.8.1",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "vue-tsc": "^3.1.1"
+  }
+}
